@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "473598771216",
+    "project_id": "pandemic-tracker-e96bd",
+    "storage_bucket": "pandemic-tracker-e96bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473598771216:android:e661cc4afdd4d201b70a95",
+        "android_client_info": {
+          "package_name": "com.example.covid_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473598771216-v5gd4pon113mc0e7cvpta6ovl8s327m4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz_puvBeWWhnOf96a7bk1Ew0MbrtdISAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473598771216-v5gd4pon113mc0e7cvpta6ovl8s327m4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

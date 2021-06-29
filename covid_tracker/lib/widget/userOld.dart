@@ -13,7 +13,7 @@ class UserOld extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Text(
-              'Have we met before?',
+              'Already have an account?',
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.white70,

@@ -18,7 +18,7 @@ class _FirstTimeState extends State<FirstTime> {
         child: Row(
           children: <Widget>[
             Text(
-              'Your first time?',
+              'Want to create a new account?',
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.white70,
