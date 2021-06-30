@@ -12,21 +12,23 @@ class CovidService {
     Uri myUri = Uri.parse("https://api.covid19api.com/summary");
     final data = await http.Client().get(myUri);
 
-    //if (data.statusCode != 200) throw Exception();
+    if (data.statusCode != 200) {
+      //throw Exception();
 
-    // GlobalSummaryModel summary =
-    //     new GlobalSummaryModel.fromJson(json.decode(data.body));
+      GlobalSummaryModel summary = GlobalSummaryModel(
+        366160,
+        177682872,
+        8916,
+        3851268,
+        306386,
+        115937280,
+        DateTime.now(),
+      );
+      return summary;
+    }
 
-    GlobalSummaryModel summary = GlobalSummaryModel(
-      366160,
-      177682872,
-      8916,
-      3851268,
-      306386,
-      115937280,
-      DateTime.now(),
-    );
-
+    GlobalSummaryModel summary =
+    new GlobalSummaryModel.fromJson(json.decode(data.body));
     return summary;
   }
 
@@ -35,26 +37,26 @@ class CovidService {
         Uri.parse("https://api.covid19api.com/total/dayone/country/" + slug);
     final data = await http.Client().get(myUri);
 
-    // if (data.statusCode != 200) {
-    //   throw Exception();
-    // }
-    //
-    // List<CountrySummaryModel> summaryList = (json.decode(data.body) as List)
-    //     .map((item) => new CountrySummaryModel.fromJson(item))
-    //     .toList();
+    if (data.statusCode != 200) {
+      //throw Exception();
+      List<CountrySummaryModel> summaryList = [];
 
-    List<CountrySummaryModel> summaryList = [];
+      summaryList.add(
+        CountrySummaryModel(
+          'Romania',
+          1080282,
+          32391,
+          1045207,
+          2684,
+          DateTime.now(),
+        ),
+      );
+      return summaryList;
+    }
 
-    summaryList.add(
-      CountrySummaryModel(
-        'Romania',
-        1080282,
-        32391,
-        1045207,
-        2684,
-        DateTime.now(),
-      ),
-    );
+    List<CountrySummaryModel> summaryList = (json.decode(data.body) as List)
+        .map((item) => new CountrySummaryModel.fromJson(item))
+        .toList();
 
     return summaryList;
   }
@@ -63,21 +65,23 @@ class CovidService {
     Uri myUri = Uri.parse("https://api.covid19api.com/countries");
     final data = await http.Client().get(myUri);
 
-    //if (data.statusCode != 200) throw Exception();
+    if (data.statusCode != 200) {
+      //throw Exception();
 
-    // List<CountryModel> countries = (json.decode(data.body) as List)
-    //     .map((item) => new CountryModel.fromJson(item))
-    //     .toList();
+      List<CountryModel> countries = [];
+      countries.add(
+        CountryModel(
+          'Romania',
+          'Slug',
+          'Iso2',
+        ),
+      );
+      return countries;
+    }
 
-    List<CountryModel> countries = [];
-
-    countries.add(
-      CountryModel(
-        'Romania',
-        'Slug',
-        'Iso2',
-      ),
-    );
+    List<CountryModel> countries = (json.decode(data.body) as List)
+        .map((item) => new CountryModel.fromJson(item))
+        .toList();
 
     return countries;
   }
